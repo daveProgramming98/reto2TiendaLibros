@@ -1,0 +1,43 @@
+ARRAYLIST
+¿Como se declara e inicializa?
+* ArrayList<tipo de dato> nombre del ArrayList = new ArrayList<tipo de dato>
+NOTA: en donde el tipo de dato puede ser un tipo de variable nativa de Java o Objetos de una Clase
+
+Metodos de la clase ArrayList
+.size() -> Obtiene el tamaño del arrayList
+.get(#posiciondelArrayList) -> Obtiene el dato de determinada posicion en el ArrayList
+.set(#posiciondelArrayList, datoAReemplazar) -> Permite y/o modificar el dato en determinada posicion del ArrayLsit
+
+-----------------------------------------------------------
+Metodo 1 (Aplicar descuentos)
+-----------------------------------------------------------
+1. Creación de variables / atributos iniciales
+	* (libroActual) Objeto (Clase Libro) vacio -> Valor null
+	* (tamanoCatalogo) Int para capturar el tamaño del ArrayList de Libros 'catalogo' que contiene objetos (tipo Libro)
+	* (tamanoDescuentos) Int para captura el tamaño del Arreglo 'descuentos' o 'lim_inf' o 'lim_sup' (Cualquiera sirve, todos tienen la misma longitud o tamaño)
+	* (precioActualV) Double para guardar el precio de venta de un Libro -> inicializado en 0
+	* (precioConDescuento) Double para guardar y cacular el precio de venta de un Libro luego de aplicar el descuento correspondiente -> inicializado en 0
+	* (limInf) Int para guardar el valor del Arreglo 'lim_inf' en una determinada posicion -> inicializado en 0
+	* (limSup) Int para guardar el valor del Arreglo 'lim_sup' en una determinada posicion -> inicializado en 0
+	* (descuentoA) Double para guardar el valor del Arreglo 'descuentos' en una determinada posicion -> inicializado en 0
+2. Hacer un bucle For para recorrer el ArrayList 'catalogo' desde i=0 hasta el tamaño del ArrayList Catalogo
+	- Obtener determinado objeto Libro del ArrayList 'catalogo' y guardarlo el el objeto vacio 'libroActual'
+	- Obtener el precio de venta de determinado objeto Libro del ArrayList 'catalogo' y guardarlo en la variable 'precioActualV' llamando al metodo .darPrecioVenta()
+	- Pasar al paso 3 (va dentro de este bucle For)
+3. Hacer un bucle For para recorrer los arreglos 'descuentos', 'lim_inf' y 'lim_sup' desde j = 0 hasta tamanoDescuentos
+	- Obtener el valor de determinada posicion de arreglo 'lim_inf' y guardarlo en la variable limInf
+	- Obtener el valor de determinada posicion de arreglo 'lin_sup' y guardarlo en la variable limSup
+	- Pasar al paso 4 (va dentro de este bucle For)
+4. Comparar (IF) el precio de venta del 'libroActual' con los limites en determinada posicion previamente hallados, teniendo en cuenta:
+   o Limite inferior (inclusivo) -> precioActualV >= limInf
+   o Limite superior (no inclusivo) -> precioActualV >= limInf
+	----- Dentro de la comparación o sentencia IF --------
+	* Obtener el valor de determinada posicion de arreglo 'descuentos' y guardarlo en la variable descuentoA 
+	* Calcular el precio de venta una vez aplicado el descuento y guardarlo en la variable 'precioConDescuento'
+		- > F O R M U L A = > precio de venta del libro - (precio de venta del libro * el descuento a aplicar)
+	* Crear un metodo nuevo en la Clase 'Libro' para poder modificar el precio de venta de un objeto tipo Libro
+	* Llamar al metodo previamente creado pasandole como parametro de entrada la variable 'precioConDescuento' para el 'LibroActual'
+	* Actualizar el 'libroActual' en el ArrayList 'catalogo'
+-----------------------------------------------------------
+Metodo 2 (Dar transaccion de venta mas costosa)
+-----------------------------------------------------------
